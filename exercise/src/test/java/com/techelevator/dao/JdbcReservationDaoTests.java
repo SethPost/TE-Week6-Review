@@ -26,4 +26,14 @@ public class JdbcReservationDaoTests extends BaseDaoTests {
         assertEquals(5, reservationCreated);
     }
 
+    @Test
+    public void createReservation_Should_ReturnNewReservationId_2() {
+        int reservationCreated = dao.createReservation(2,
+                "TEST NAME 2",
+                LocalDate.now().plusDays(2),
+                LocalDate.now().plusDays(4));
+
+        assertEquals(6, reservationCreated);
+    }
+
 }
